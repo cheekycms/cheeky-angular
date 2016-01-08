@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
-    "build": "mkdir -p dist && uglifyjs src/cheeky-angular.js --compress --source-map dist/cheeky-angular.min.js --source-map-root .. --source-map-url ../dist/cheeky-angular.min.js.map -o dist/cheeky-angular.min.js"
+    "build": "mkdir dist && uglifyjs src/cheeky-angular.js --compress --source-map dist/cheeky-angular.min.js --source-map-root .. --source-map-url ../dist/cheeky-angular.min.js.map -o dist/cheeky-angular.min.js"
   },
   "repository": {
     "type": "git",
