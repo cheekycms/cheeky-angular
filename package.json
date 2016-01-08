@@ -1,0 +1,32 @@
+{
+  "name": "cheeky-angular",
+  "version": "0.1.0",
+  "description": "Angular Components for Cheeky CMS",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "mkdir -p dist && uglifyjs src/cheeky-angular.js --compress --source-map dist/cheeky-angular.min.js --source-map-root .. --source-map-url ../dist/cheeky-angular.min.js.map -o dist/cheeky-angular.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheekycms/cheeky-angular.git"
+  },
+  "keywords": [
+    "angular",
+    "cheeky",
+    "cms"
+  ],
+  "author": "Charlie Brown <carbonrobot@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheekycms/cheeky-angular/issues"
+  },
+  "homepage": "https://github.com/cheekycms/cheeky-angular#readme",
+  "devDependencies": {
+    "uglifyjs": "^2.4.10"
+  }
+}

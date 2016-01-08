@@ -1,0 +1,24 @@
+{
+  "name": "cheeky-angular",
+  "homepage": "https://github.com/cheekycms/cheeky-angular",
+  "authors": [
+    "Charlie Brown <carbonrobot@gmail.com>"
+  ],
+  "description": "Angular Components for Cheeky CMS",
+  "main": "./dist/cheeky-angular.min.js",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "cheeky",
+    "cms"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "example",
+    "package.json",
+    "src/index.js"
+  ]
+}
