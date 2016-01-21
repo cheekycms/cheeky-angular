@@ -4,6 +4,29 @@
 
 Angular Plugin for [Cheeky CMS](https://github.com/cheekycms/cheeky).
 
+## Usage
+
+```
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/bower_components/angular-cache/dist/angular-cache.min.js"></script>
+    <script src="/bower_components/lodash/lodash.min.js"></script>
+    <script src="/src/cheeky-angular.js"></script>
+    <script src="http://www.alohaeditor.org/download/aloha.min.js"></script>
+```
+
+Configure the css key maps
+
+```
+angular.module('app', ['ngSanitize', 'cheeky'])
+    .config(function(cheekyCMSProvider){
+        cheekyCMSProvider.map({
+            "content": "content.json",
+            "crumpet": "crumpet.json"
+        });
+    });
+```
+
 ## License
 
 [MIT](LICENSE)

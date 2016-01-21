@@ -17,11 +17,8 @@
             function (content) {
                 return {
                     restrict: 'EA',
-                    scope: {
-                        path: '@'
-                    },
                     link: function (scope, element, attrs) {
-                        var path = scope.path || attrs.cheekyContent;
+                        var path = attrs.path || attrs.cheekyContent;
                         content.fetch(path).then(function (data) {
                             if (data) {
                                 element.html(data);
@@ -32,7 +29,32 @@
                         });
                     }
                 };
-            }])
+            }
+        ])
+
+    /**
+     * @ngdoc directive
+     * @name cheekyEditable
+     */
+        .directive('cheekyEditable', ['cheekyCMS',
+            function (content) {
+                return {
+                    link: function (scope, element, attrs) {
+                        if (!aloha) return; // if aloha does not exist, editing is disabled
+                        
+                        var path = attrs.path || attrs.cheekyContent;
+                        
+                        // activate editing
+                        aloha(angular.element(element)[0]);
+                        
+                        // on click, show the editing bar
+                        // TODO~~
+                        
+                                            
+                    }
+                };
+            }
+        ])
 
     /**
      * @ngdoc provider
@@ -41,7 +63,6 @@
         .provider('cheekyCMS', [function () {
 
             // configurations
-            // TODO: configure this in run/config
             var CACHE_KEY = 'cheeky';
             var CACHE_LIFETIME = 15 * 60 * 1000;
             var STORAGE_MODE = 'localStorage';
@@ -50,8 +71,8 @@
             /**
              * Sets the CMS key mapping
              */
-            this.map = function(m){
-                KEY_MAP = m; 
+            this.map = function (m) {
+                KEY_MAP = m;
             };
 
             /**
@@ -109,7 +130,7 @@
                         warmup: warmup
                     };
                 }];
-
-        }]);
+        }
+        ]);
 
 })(window, angular);

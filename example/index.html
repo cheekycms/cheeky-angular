@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="dist/cheeky.css">
     <link rel="stylesheet" href="main.css">
 
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="/bower_components/angular-cache/dist/angular-cache.min.js"></script>
     <script src="/bower_components/lodash/lodash.min.js"></script>
-    <script src="/src/cheeky-angular.js"></script>
+    <script src="/dist/cheeky-angular-min.js"></script>
+    <script src="http://www.alohaeditor.org/download/aloha.min.js"></script>
     <script>
         angular.module('app', ['ngSanitize', 'cheeky'])
             .config(function(cheekyCMSProvider){
@@ -36,7 +38,10 @@
 
             <div class="example">Unmapped, fails silently and does not replace the content. Logs a message to console.</div>
             <div cheeky-content="content.msgs.missing">Hello There</div>
-
+            
+            <div class="example">Editable Content</div>
+            <div cheeky-content="crumpet.msgs.welcome" cheeky-editable></div>
+            
         </div>
     </div>
 </body>

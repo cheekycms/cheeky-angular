@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
-    "build": "mkdir dist && uglifyjs src/cheeky-angular.js --compress --source-map dist/cheeky-angular.min.js --source-map-root .. --source-map-url ../dist/cheeky-angular.min.js.map -o dist/cheeky-angular.min.js"
+    "build": "mkdir dist && lessc src/cheeky.less dist/cheeky.css && uglifyjs src/cheeky-angular.js --compress --source-map dist/cheeky-angular.min.js --source-map-root .. --source-map-url ../dist/cheeky-angular.min.js.map -o dist/cheeky-angular.min.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/cheekycms/cheeky-angular#readme",
   "devDependencies": {
+    "less": "^2.5.3",
     "uglifyjs": "^2.4.10"
   }
 }
