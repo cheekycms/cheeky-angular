@@ -4,17 +4,21 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="dist/cheeky.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
-
-    <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-    <script src="/bower_components/angular-cache/dist/angular-cache.min.js"></script>
-    <script src="/bower_components/lodash/lodash.min.js"></script>
-    <script src="/dist/cheeky-angular-min.js"></script>
+    
+    <link rel="stylesheet" href="/dist/cheeky.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.4.9/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-cache/4.5.0/angular-cache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
     <script src="http://www.alohaeditor.org/download/aloha.min.js"></script>
+    
+    <script src="/dist/cheeky.min.js"></script>
+    
     <script>
-        angular.module('app', ['ngSanitize', 'cheeky'])
+        angular.module('app', ['cheeky'])
             .config(function(cheekyCMSProvider){
                 cheekyCMSProvider.map({
                     "content": "content.json",
@@ -38,10 +42,10 @@
 
             <div class="example">Unmapped, fails silently and does not replace the content. Logs a message to console.</div>
             <div cheeky-content="content.msgs.missing">Hello There</div>
-            
+
             <div class="example">Editable Content</div>
             <div cheeky-content="crumpet.msgs.welcome" cheeky-editable></div>
-            
+
         </div>
     </div>
 </body>

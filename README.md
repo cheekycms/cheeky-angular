@@ -21,11 +21,20 @@ Configure the css key maps
 angular.module('app', ['ngSanitize', 'cheeky'])
     .config(function(cheekyCMSProvider){
         cheekyCMSProvider.map({
-            "content": "content.json",
+            "content": "http://something.com/content.json",
             "crumpet": "crumpet.json"
         });
     });
 ```
+
+## Development
+
+```
+$ npm install
+$ gulp serve
+```
+
+Open a browser to http://localhost:6080/example. Changes will autoreload.
 
 ## License
 

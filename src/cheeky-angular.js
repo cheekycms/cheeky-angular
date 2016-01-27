@@ -1,6 +1,18 @@
 (function (window, angular, undefined) {
-
+    
     'use strict'
+    
+    // ie9+
+    var domReady = function(callback) {
+        document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+    };
+        
+    domReady(function(){
+        // inject ribbon
+        var ribbon = document.getElementById('template/cms-ribbon');
+        var body = document.getElementsByTagName('body')[0];
+        body.innerHTML = ribbon.innerHTML + body.innerHTML;
+    });
 
     /**
      * @ngdoc overview
